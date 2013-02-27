@@ -1,0 +1,14 @@
+
+inc/.DS_Store
+
+.DS_Store
+
+inc/config.php
+
+inc/.htpasswd
+
+inc/.htaccess
+
+admin/.htaccess
+
+admin/.htpasswd
