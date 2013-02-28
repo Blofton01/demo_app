@@ -1,12 +1,12 @@
 <?php
 require_once('inc/config.php');
-require_once('form2/validation.php');
+require_once('inc/validation.php');
 
 	
 	// * IMPORTANT * Set your email information here
 	define('DESTINATION_EMAIL','konfidentialent@gmail.com');
 	define('MESSAGE_SUBJECT','form Demo');
-	define('REPLY_TO', 'reply to email address here');
+	define('REPLY_TO', 'konfidentialent@gmail.com');
 	define('FROM_ADDRESS', 'konfidentialent@gmail.com');
 	define('REDIRECT_URL', 'http://konfidentialent.com/imd410/index.php/');
 	
@@ -63,15 +63,10 @@ while($row = $myData -> fetch_assoc())
      <h2>Contact</h2>
     <p>
     
-    <?php echo $content; ?>
+    <?php echo $intro; ?>
     </p>
-	</div>
-
-<?php include_once('inc/footer.php'); ?>
-	
-
-</div>
-<form action="<?php echo $_SERVER['form2/PHP_SELF']; ?>" method="post">
+    
+    <form action="<?php echo $_SERVER['form2/PHP_SELF']; ?>" method="post">
 		<fieldset>
 			<p>
 				<label for="name">Name:</label><?php echo @$name_error; ?>
@@ -88,6 +83,13 @@ while($row = $myData -> fetch_assoc())
 			<input name="submitted" type="submit" value="Send" />
 		</fieldset>
 	</form>
+	</div>
+
+<?php include_once('inc/footer.php'); ?>
+	
+
+</div>
+
 
 
 </body>
