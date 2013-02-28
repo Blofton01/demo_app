@@ -6,7 +6,7 @@ $sql = "SELECT * FROM site_content WHERE pg_name='about'" ;
 $myData = $db->query($sql);
 
 
-
+$items = array();
 
 //create container for each piece of data
 while($row = $myData -> fetch_assoc())
@@ -14,7 +14,10 @@ while($row = $myData -> fetch_assoc())
 	$content = $row['content'];
 	
 }
-
+ if($row['section_name'] === 'widgets')
+ {
+ 	$items[]= $row['content'];
+ }
 ?>
 
 
