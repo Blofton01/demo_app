@@ -42,9 +42,14 @@ while($row = $myData -> fetch_assoc())
   					<?php require_once('inc/nav.php'); ?>
   
    						 <aside>
- 								
+ 								<!-- loop through images and build div for each -->
+                                for($i=0; i<count($images); $i++)
+                                {
+                                	echo '<div class="widgets">';
+      								echo $items[$i];
+                                    echo '</div>';	
       
-     									
+     							}		
       
      
     					</aside>
