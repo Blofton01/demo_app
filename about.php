@@ -43,7 +43,7 @@ while($row = $myData -> fetch_assoc())
   
    						 <aside>
  								<!-- loop through images and build div for each -->
-                                for($i=0; i<count($images); $i++)
+                                for($i=0; i<count($items); $i++)
                                 {
                                 	echo '<div class="widgets">';
       								echo $items[$i];
