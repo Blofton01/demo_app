@@ -11,13 +11,16 @@ $items = array();
 //create container for each piece of data
 while($row = $myData -> fetch_assoc())
 {
-	$content = $row['content'];
-	
-}
- if($row['section_name'] === 'widgets')
+	if($row['section_name'] === 'intro')
+	{
+		$intro = $row['content'];	
+	}
+	elseif($row['section_name'] === 'widgets')
  {
  	$items[]= $row['content'];
  }
+}
+ 
 ?>
 
 
@@ -42,20 +45,24 @@ while($row = $myData -> fetch_assoc())
   					<?php require_once('inc/nav.php'); ?>
   
    						 <aside>
- 								<!-- loop through images and build div for each -->
-                                for($i=0; i<count($items); $i++)
+ 							
+     
+    					</aside>
+                                
+           </div>
+                              <!-- end .sidebar1 -->	
+                              <div id="mytext">
+                              <?php
+                             //loop through images and build div for each 
+                                for($i=0; $i<count($items); $i++)
                                 {
                                 	echo '<div class="widgets">';
       								echo $items[$i];
                                     echo '</div>';	
       
-     							}		
-      
-     
-    					</aside>
-                                
-           </div>
-                              <!-- end .sidebar1 -->
+     							}	
+								?>	
+      							</div>
                               <div class="content">
                                 <h2>About</h2>
                                
