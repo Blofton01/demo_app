@@ -32,6 +32,10 @@ while($row = $myData -> fetch_assoc())
 	{
 		$blurb = $row['content'];	
 	}
+	if($row['section_name'] == 'intro')
+	{
+		$intro = $row['content'];	
+	}
 }
 
 if( isset($_POST['submitted']) )
@@ -78,7 +82,12 @@ if( isset($_POST['submitted']) )
     	<option value="home" selected="home">home</option>
         <option value="about">about</option>
         <option value="contact">contact</option>
-    </select>        
+    </select>  
+    <label for="intro">intro</label>
+    <textarea name="intro" rows="10" cols="30">
+    <?php echo $intro; ?>
+    </textarea>
+          
     <label for="body">body</label>
     <textarea name="body" rows="10" cols="30">
     <?php echo $blurb; ?>

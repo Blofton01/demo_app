@@ -29,7 +29,7 @@ while($row = $myData -> fetch_assoc())
 	{
 		$intro = $row['content'];	
 	}
-	elseif($row['section_name'] === 'widgets')
+	if($row['section_name'] === 'widgets')
  {
  	$items[]= $row['content'];
  }
