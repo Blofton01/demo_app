@@ -2,7 +2,9 @@
 require_once('../inc/config.php');
 
 //get all contact related to this page (home)
-$sql = "SELECT * FROM site_content WHERE pg_name='about' AND section_name='intro'" ;
+$sql = "SELECT * 
+FROM site_content 
+WHERE pg_name='about' AND section_name='intro'" ;
 $myData = $db->query($sql);
 
 
@@ -69,7 +71,7 @@ if( isset($_POST['submitted']) )
     
     
     </fieldset>
-<form>
+</form>
 
 
 </body>
