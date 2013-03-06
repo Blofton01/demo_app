@@ -1,7 +1,7 @@
 <?php
 require_once('../inc/config.php');
 
-//get all contact related to this page (home)
+//get all contact related to this page (about)
 $sql = "SELECT * 
 FROM site_content 
 WHERE pg_name='about' AND section_name='intro'" ;
@@ -65,7 +65,7 @@ if( isset($_POST['submitted']) )
     </select>        
     <label for="body">body</label>
     <textarea name="body" rows="10" cols="30">
-    <?php echo $blurb; ?>
+    <?php echo $intro; ?>
     </textarea>
     <input type="submit" name="submitted" value="update now" />
     

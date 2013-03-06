@@ -1,11 +1,11 @@
-/*<?php
+<?php
 require_once('../inc/config.php');
 
-//get all contact related to this page (home)
+//get all contact related to this page (contact)
+
 $sql = "SELECT * 
 FROM site_content 
-WHERE pg_name='home' 
-AND section_name='blurb'" ;
+WHERE pg_name='contact' AND section_name='intro'" ;
 $myData = $db->query($sql);
 
 
@@ -14,9 +14,9 @@ $myData = $db->query($sql);
 //create container for each piece of data
 while($row = $myData -> fetch_assoc())
 {
-	if($row['section_name'] == 'blurb')
+	if($row['section_name'] == 'intro')
 	{
-		$blurb = $row['content'];	
+		$intro = $row['content'];	
 	}
 }
 
@@ -26,7 +26,7 @@ if( isset($_POST['submitted']) )
 	
 	
 	$sql = "UPDATE site_content SET content = '$user_content'
-	WHERE pg_name='home' AND section_name='blurb' ";
+	WHERE pg_name='contact' AND section_name='intro' ";
 	
 	$myData = $db->query($sql);
 	
@@ -35,14 +35,14 @@ if( isset($_POST['submitted']) )
 }
 
 ?>
-*/
+
 
 
 <!doctype html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Update Page</title>
+<title>Update About Page</title>
 <style>
 	legend, select, label, textarea, input 
 	{
@@ -55,13 +55,13 @@ if( isset($_POST['submitted']) )
 </head>
 
 <body>
-<h1>Update Page</h1>
+<h1>Update Home Page</h1>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
 	<fieldset>
-    <legend>Update Page Info</legend>
-    <select id="page" onchange="set_page(this)">
-    	<option value="home" selected="home">home</option>
-        <option value="about">about</option>
+    <legend>Update About Page Info</legend>
+    <select>
+    	<option value="home">home</option>
+        <option value="about"selected="about" >about</option>
         <option value="contact">contact</option>
     </select>        
     <label for="body">body</label>
@@ -73,12 +73,7 @@ if( isset($_POST['submitted']) )
     
     </fieldset>
 </form>
-<script>
-	function set_page(obj)
-	{
-		var page = obj.value;
-		window.location = './update.html?p='+ page;
-	}
-</script>
+
+
 </body>
 </html>

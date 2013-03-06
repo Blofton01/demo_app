@@ -51,6 +51,15 @@ while($row = $myData -> fetch_assoc())
                                 
            </div>
                               <!-- end .sidebar1 -->	
+                              <div class="content">
+                                <h2>About</h2>
+                               
+                                  <p>
+                                  <?php echo $content; ?>
+                                  
+                                  </p>
+                              
+                           </div>
                               <div id="mytext">
                               <?php
                              //loop through images and build div for each 
@@ -63,15 +72,7 @@ while($row = $myData -> fetch_assoc())
      							}	
 								?>	
       							</div>
-                              <div class="content">
-                                <h2>About</h2>
-                               
-                                  <p>
-                                  <?php echo $content; ?>
-                                  
-                                  </p>
                               
-                           </div>
  
 
 
