@@ -1,3 +1,43 @@
+<?php
+require_once('../inc/config.php');
+
+//get all contact related to this page (home)
+$sql = "SELECT * 
+FROM site_content 
+WHERE pg_name='home' 
+AND section_name='blurb'" ;
+$myData = $db->query($sql);
+
+
+
+
+//create container for each piece of data
+while($row = $myData -> fetch_assoc())
+{
+	if($row['section_name'] == 'blurb')
+	{
+		$blurb = $row['content'];	
+	}
+}
+
+if( isset($_POST['submitted']) )
+{
+	$user_content = mysqli_real_escape_string($db, $_POST['body']);
+	
+	
+	$sql = "UPDATE site_content SET content = '$user_content'
+	WHERE pg_name='home' AND section_name='blurb' ";
+	
+	$myData = $db->query($sql);
+	
+	header('Location: ../');
+	
+}
+
+?>
+
+
+
 <!doctype html>
 <html>
 <head>
